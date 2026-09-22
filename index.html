@@ -347,6 +347,40 @@
     .team-card span { color: var(--muted); font-size: 13px; }
     .sources { margin-top: 28px; padding: 18px 20px; border-radius: 16px; background: var(--blue-soft); color: var(--muted); font-size: 13px; }
     .sources a { color: var(--navy-2); }
+    .chapter-nav { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; margin-top: 26px; }
+    .chapter-link { padding: 18px; border-radius: 17px; background: #fff; text-decoration: none; box-shadow: 0 8px 24px rgba(16,42,61,.06); }
+    .chapter-link span { display: block; color: var(--gold-dark); font-size: 12px; font-weight: 700; }
+    .chapter-link strong { display: block; margin-top: 4px; line-height: 1.35; }
+    .objective-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .objective { display: grid; grid-template-columns: 40px 1fr; gap: 14px; padding: 20px; border-radius: 18px; background: #fff; }
+    .objective b { width: 40px; height: 40px; display: grid; place-items: center; border-radius: 50%; color: var(--navy); background: var(--gold); }
+    .objective strong, .objective span { display: block; }
+    .objective span { color: var(--muted); font-size: 14px; }
+    .travel-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    .travel-card { position: relative; min-height: 330px; overflow: hidden; border-radius: 20px; background: var(--navy); }
+    .travel-card img { height: 330px; object-fit: cover; transition: transform .45s ease; }
+    .travel-card:hover img { transform: scale(1.04); }
+    .travel-card::after { content: ""; position: absolute; inset: 38% 0 0; background: linear-gradient(transparent, rgba(5,25,41,.92)); }
+    .travel-copy { position: absolute; z-index: 2; left: 18px; right: 18px; bottom: 16px; color: #fff; }
+    .travel-copy small { color: #ffd26c; }
+    .travel-copy h3 { margin: 4px 0; }
+    .travel-copy p { margin: 0; color: rgba(255,255,255,.78); font-size: 13px; line-height: 1.5; }
+    .info-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .info-card { padding: 22px; border-radius: 18px; background: #fff; }
+    .info-card p { margin: 0; color: var(--muted); }
+    .rule-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; counter-reset: rule; }
+    .rule { position: relative; padding: 16px 18px 16px 53px; border-radius: 15px; background: #fff; }
+    .rule::before { counter-increment: rule; content: counter(rule); position: absolute; left: 14px; top: 14px; width: 28px; height: 28px; display: grid; place-items: center; border-radius: 50%; color: var(--navy); background: var(--gold); font-size: 13px; font-weight: 700; }
+    .rule strong, .rule span { display: block; }
+    .rule span { color: var(--muted); font-size: 14px; }
+    .privacy-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 22px; }
+    .privacy-card { padding: 19px; border-radius: 17px; color: #fff; background: var(--navy); }
+    .privacy-card strong { display: block; color: #ffd16b; }
+    .privacy-card span { color: rgba(255,255,255,.72); font-size: 13px; }
+    .showcase { display: grid; grid-template-columns: minmax(0,1fr) 370px; gap: 28px; align-items: center; padding: 38px; border-radius: 26px; color: #fff; background: radial-gradient(circle at 90% 10%, rgba(230,170,46,.3), transparent 34%), var(--navy); box-shadow: var(--shadow); }
+    .showcase p { color: rgba(255,255,255,.74); }
+    .showcase-preview { overflow: hidden; border: 6px solid rgba(255,255,255,.86); border-radius: 18px; box-shadow: 0 18px 40px rgba(0,0,0,.25); }
+    .showcase-preview img { height: 225px; object-fit: cover; }
     .site-footer { padding-block: 34px; color: rgba(255,255,255,.82); background: var(--navy); }
     .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
     .footer-inner p { margin: 0; font-size: 13px; }
@@ -379,6 +413,9 @@
       .hero-collage { min-height: 420px; max-width: 680px; width: 100%; }
       .roles { grid-template-columns: repeat(2, 1fr); }
       .roadmap { grid-template-columns: repeat(4, 1fr); }
+      .chapter-nav { grid-template-columns: repeat(3, 1fr); }
+      .travel-grid { grid-template-columns: repeat(2, 1fr); }
+      .privacy-grid { grid-template-columns: repeat(2, 1fr); }
     }
     @media (max-width: 760px) {
       .container { width: min(100% - 28px, 1180px); }
@@ -394,6 +431,8 @@
       .process-step:nth-child(2n)::after { display: none; }
       .roadmap { grid-template-columns: repeat(2, 1fr); }
       .prototype-box { grid-template-columns: 1fr; padding: 28px; }
+      .objective-grid, .info-grid { grid-template-columns: 1fr; }
+      .showcase { grid-template-columns: 1fr; padding: 28px; }
       .footer-inner { align-items: flex-start; flex-direction: column; }
     }
     @media (max-width: 520px) {
@@ -406,6 +445,7 @@
       .roles, .process-grid, .roadmap, .swot-grid { grid-template-columns: 1fr; }
       .process-step::after { display: none !important; }
       .safety-banner { grid-template-columns: 1fr; }
+      .chapter-nav, .travel-grid, .privacy-grid, .rule-list { grid-template-columns: 1fr; }
       .badge { justify-self: start; }
       .bar-row { grid-template-columns: 1fr 44px; }
       .bar-row .track { grid-column: 1 / -1; grid-row: 2; }
@@ -425,7 +465,7 @@
         <span>Railway Photo Project<small>โครงงานวิชาหลักการจัดการ</small></span>
       </a>
       <nav class="nav-links" id="site-nav" aria-label="เมนูหลัก">
-        <a href="#overview">ภาพรวม</a><a href="#activities">กิจกรรม</a><a href="#system">ระบบ</a><a href="#management">การจัดการ</a><a href="#evaluation">ประเมินผล</a><a href="#team">ผู้จัดทำ</a>
+        <a href="#overview">ภาพรวม</a><a href="#tourism">การท่องเที่ยว</a><a href="#activities">กิจกรรม</a><a href="#system">ระบบ</a><a href="#safety-rights">สิทธิและความปลอดภัย</a><a href="#management">การจัดการ</a><a href="#evaluation">ประเมินผล</a>
       </nav>
       <div class="header-actions">
         <button class="button ghost" id="present-button" type="button">โหมดนำเสนอ</button>
@@ -470,14 +510,43 @@
           <article class="card"><span class="icon-box" aria-hidden="true">▣</span><h3>พื้นที่ยังไม่ได้รับการมองเห็น</h3><p>สถานี ชุมชน และแหล่งท่องเที่ยวบางแห่งได้รับการประชาสัมพันธ์จำกัด ภาพถ่ายช่วยถ่ายทอดเรื่องราวได้รวดเร็ว</p></article>
           <article class="card"><span class="icon-box" aria-hidden="true">✓</span><h3>การมีส่วนร่วมอย่างปลอดภัย</h3><p>กิจกรรมต้องกำหนดกติกา เขตถ่ายภาพ สิทธิในผลงาน และการคุ้มครองข้อมูลส่วนบุคคลตั้งแต่ต้น</p></article>
         </div>
-        <div class="grid-2" style="margin-top:18px">
-          <article class="card"><h3>วัตถุประสงค์ด้านระบบ</h3><p>ออกแบบและพัฒนาต้นแบบเว็บไซต์สำหรับประชาสัมพันธ์ รับสมัคร ส่งผลงาน จัดแสดง พิจารณา และประกาศผลอย่างเป็นระบบ</p></article>
-          <article class="card"><h3>วัตถุประสงค์ด้านการท่องเที่ยว</h3><p>เพิ่มความสนใจต่อการเดินทางโดยรถไฟ และเปิดพื้นที่ให้ประชาชนเล่าเรื่องสถานี ชุมชน และสถานที่ท่องเที่ยวผ่านภาพ</p></article>
+        <div class="section-header" style="margin-top:38px"><div><h2>วัตถุประสงค์ 6 ประการ</h2><p class="section-note">สรุปตรงตามบทที่ 1 ของรายงานฉบับสมบูรณ์</p></div></div>
+        <div class="objective-grid">
+          <article class="objective"><b>1</b><div><strong>พัฒนาเว็บไซต์กลาง</strong><span>ประชาสัมพันธ์และบริหารกิจกรรมประกวดภาพถ่าย</span></div></article>
+          <article class="objective"><b>2</b><div><strong>ส่งเสริมการเดินทาง</strong><span>สร้างความสนใจต่อรถไฟและแหล่งท่องเที่ยวตามแนวเส้นทาง</span></div></article>
+          <article class="objective"><b>3</b><div><strong>เปิดพื้นที่สร้างสรรค์</strong><span>ให้ผู้เข้าร่วมแสดงความสามารถตามหลักเกณฑ์ที่ชัดเจน</span></div></article>
+          <article class="objective"><b>4</b><div><strong>ประชาสัมพันธ์พื้นที่</strong><span>เพิ่มการมองเห็นให้สถานี ชุมชน และสถานที่ท่องเที่ยว</span></div></article>
+          <article class="objective"><b>5</b><div><strong>บริหารอย่างโปร่งใส</strong><span>จัดการข้อมูล ผลงาน และคะแนนอย่างเป็นระบบ</span></div></article>
+          <article class="objective"><b>6</b><div><strong>ต่อยอดความร่วมมือ</strong><span>เสนอแบบแผนธุรกิจและแนวทางทำงานร่วมกับพันธมิตร</span></div></article>
+        </div>
+        <nav class="chapter-nav" aria-label="สารบัญเนื้อหาโครงงาน">
+          <a class="chapter-link" href="#overview"><span>บทที่ 1</span><strong>ที่มาและเป้าหมาย</strong></a>
+          <a class="chapter-link" href="#tourism"><span>บทที่ 2</span><strong>แนวคิดที่เกี่ยวข้อง</strong></a>
+          <a class="chapter-link" href="#system"><span>บทที่ 3</span><strong>วิธีดำเนินงาน</strong></a>
+          <a class="chapter-link" href="#evaluation"><span>บทที่ 4</span><strong>ผลและการประเมิน</strong></a>
+          <a class="chapter-link" href="#team"><span>บทที่ 5</span><strong>สรุปและอ้างอิง</strong></a>
+        </nav>
+      </div>
+    </section>
+
+    <section class="section paper present-slide" id="tourism" data-title="แนวคิดการท่องเที่ยวทางรถไฟ">
+      <div class="container">
+        <div class="section-header"><div><div class="eyebrow">02 · แนวคิดจากบทที่ 2</div><h2>ภาพถ่ายเล่าเรื่องรถไฟ พื้นที่ และผู้คน</h2><p class="section-note">ภาพในโครงการไม่ได้เป็นเพียงผลงานแข่งขัน แต่ทำหน้าที่เป็นสื่อประชาสัมพันธ์จากมุมมองของผู้เดินทางจริง</p></div><span class="speaker-tag">รถไฟ · ภาพถ่าย · ชุมชน</span></div>
+        <div class="travel-grid">
+          <article class="travel-card"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Hua%20Hin%20Railway%20Station%20Thailand.JPG?width=900" alt="สถานีรถไฟหัวหิน" loading="lazy"><div class="travel-copy"><small>สถานีและสถาปัตยกรรม</small><h3>หัวหิน</h3><p>อัตลักษณ์ของสถานีสร้างความทรงจำและบอกเรื่องราวของพื้นที่</p></div></article>
+          <article class="travel-card"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/RiverKwaiBridge%20Train.JPG?width=900" alt="รถไฟกำลังข้ามสะพานข้ามแม่น้ำแคว" loading="lazy"><div class="travel-copy"><small>เส้นทางและประวัติศาสตร์</small><h3>กาญจนบุรี</h3><p>ระบบรางเชื่อมภูมิประเทศ ประวัติศาสตร์ และประสบการณ์เดินทาง</p></div></article>
+          <article class="travel-card"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Pasak%20Jolasit%20Dam%20Excursion%20Train%20in%202019%20-%20%E0%B8%A3%E0%B8%96%E0%B9%84%E0%B8%9F%E0%B8%99%E0%B8%B3%E0%B9%80%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A7%E0%B9%80%E0%B8%82%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%99%E0%B8%9B%E0%B9%88%E0%B8%B2%E0%B8%AA%E0%B8%B1%E0%B8%81%E0%B8%AF.jpg?width=900" alt="รถไฟนำเที่ยวเขื่อนป่าสักชลสิทธิ์" loading="lazy"><div class="travel-copy"><small>ทิวทัศน์ระหว่างทาง</small><h3>เขื่อนป่าสักชลสิทธิ์</h3><p>การเดินทางเองสามารถเป็นส่วนสำคัญของประสบการณ์ท่องเที่ยว</p></div></article>
+          <article class="travel-card"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Maeklong%20Railway%20Market.jpg?width=800" alt="ตลาดร่มหุบแม่กลอง" loading="lazy"><div class="travel-copy"><small>วิถีชีวิตและชุมชน</small><h3>แม่กลอง</h3><p>ภาพถ่ายทอดความสัมพันธ์ระหว่างรถไฟ พื้นที่ และผู้คน</p></div></article>
+        </div>
+        <div class="info-grid" style="margin-top:18px">
+          <article class="info-card"><h3>คุณค่าต่อผู้เข้าร่วม</h3><p>มีพื้นที่แสดงความสามารถและฝึกเล่าเรื่องผ่านชื่อผลงาน สถานที่ และคำอธิบายแนวคิด</p></article>
+          <article class="info-card"><h3>คุณค่าต่อพื้นที่</h3><p>สถานี ชุมชน และผู้ประกอบการมีโอกาสได้รับการมองเห็นจากเนื้อหาที่ผู้ใช้ร่วมสร้าง</p></article>
+          <article class="info-card"><h3>คุณค่าต่อโครงการ</h3><p>เกิดคลังภาพที่นำไปประชาสัมพันธ์ได้ภายใต้ขอบเขตสิทธิที่กำหนด</p></article>
         </div>
       </div>
     </section>
 
-    <section class="section paper present-slide" id="activities" data-title="ผู้พูด 2 · ขอบเขตและกิจกรรม">
+    <section class="section present-slide" id="activities" data-title="ผู้พูด 2 · ขอบเขตและกิจกรรม">
       <div class="container">
         <div class="section-header"><div><div class="eyebrow">02 · ขอบเขต กลุ่มเป้าหมาย และกิจกรรม</div><h2>หนึ่งโครงการ สองพื้นที่สร้างสรรค์</h2><p class="section-note">กลุ่มเป้าหมายคือประชาชน นักเรียน นักศึกษา นักท่องเที่ยว ช่างภาพสมัครเล่น ผู้สนใจรถไฟ และผู้สนใจงานศิลปะ</p></div><span class="speaker-tag">ผู้พูดคนที่ 2</span></div>
         <div class="grid-2">
@@ -489,6 +558,15 @@
             <div class="paint-visual" role="img" aria-label="ภาพแทนกิจกรรมระบายสีชิ้นงานเกี่ยวกับรถไฟ"><strong>แต้มสี สร้างเรื่องราว แล้วถ่ายภาพคู่กับผลงาน</strong><span class="activity-chip">กิจกรรมเสริม</span></div>
             <div class="activity-body"><h3>แต้มสีเรื่องราวรถไฟ</h3><p>ระบายสีชิ้นงานปูนปั้นหรือแบบจำลองเกี่ยวกับรถไฟ เพื่อเพิ่มโอกาสการมีส่วนร่วมของครอบครัว เด็ก เยาวชน และผู้สนใจงานศิลปะ</p><div class="activity-meta"><span>กิจกรรมหลายช่วงวัย</span><span>•</span><span>เรียนรู้ผ่านศิลปะ</span><span>•</span><span>จัดในพื้นที่กำหนด</span></div></div>
           </article>
+        </div>
+        <div class="section-header" style="margin-top:38px"><div><h2>กติกาสำคัญก่อนส่งผลงาน</h2><p class="section-note">จัดกลุ่มจากกติกา 10 ข้อในรายงานให้อ่านและตรวจสอบง่ายขึ้น</p></div></div>
+        <div class="rule-list">
+          <div class="rule"><strong>เป็นผลงานของตนเอง</strong><span>ไม่ละเมิดลิขสิทธิ์หรือสิทธิส่วนบุคคลของผู้อื่น</span></div>
+          <div class="rule"><strong>ตรงกับหัวข้อ</strong><span>เกี่ยวข้องกับรถไฟ การเดินทาง สถานี ชุมชน หรือแหล่งท่องเที่ยว</span></div>
+          <div class="rule"><strong>ข้อมูลประกอบครบถ้วน</strong><span>ระบุชื่อผลงาน สถานที่ถ่ายภาพ และคำอธิบายแนวคิด</span></div>
+          <div class="rule"><strong>ปรับแต่งอย่างเหมาะสม</strong><span>ไม่บิดเบือนสาระสำคัญของเหตุการณ์หรือสถานที่</span></div>
+          <div class="rule"><strong>ถ่ายจากพื้นที่ปลอดภัย</strong><span>ไม่รุกล้ำเขตทาง พื้นที่หวงห้าม หรือพื้นที่ปฏิบัติการ</span></div>
+          <div class="rule"><strong>ผู้ส่งยังเป็นเจ้าของลิขสิทธิ์</strong><span>ผู้จัดใช้ประชาสัมพันธ์เฉพาะขอบเขตและระยะเวลาที่ประกาศ</span></div>
         </div>
         <div class="sources"><strong>ขอบเขตของต้นแบบ:</strong> ไม่เชื่อมระบบจำหน่ายบัตรโดยสารจริง ไม่รับชำระเงินออนไลน์ และไม่ใช้ข้อมูลภายในของหน่วยงานภายนอกที่ต้องได้รับสิทธิอนุญาตเฉพาะ</div>
       </div>
@@ -517,7 +595,25 @@
       </div>
     </section>
 
-    <section class="section paper present-slide" id="management" data-title="ผู้พูด 5–6 · เกณฑ์และทรัพยากร">
+    <section class="section paper present-slide" id="safety-rights" data-title="สิทธิและความปลอดภัย">
+      <div class="container">
+        <div class="section-header"><div><div class="eyebrow">05 · ความปลอดภัย ลิขสิทธิ์ และข้อมูลส่วนบุคคล</div><h2>เงื่อนไขที่ต้องมาก่อนภาพสวย</h2><p class="section-note">คุณภาพของผลงานไม่สามารถใช้เป็นเหตุผลในการเสี่ยงอันตรายหรือฝ่าฝืนกฎของสถานที่ได้</p></div><span class="speaker-tag">ความเสี่ยงระดับสูง</span></div>
+        <div class="safety-banner"><span class="safety-icon" aria-hidden="true">!</span><div><strong>ห้ามยืน นั่ง เดิน หรือจัดท่าถ่ายภาพบนรางและเขตทาง</strong><p>ถ่ายภาพเฉพาะพื้นที่สาธารณะหรือพื้นที่ที่ได้รับอนุญาต ปฏิบัติตามป้ายเตือนและคำแนะนำของเจ้าหน้าที่ ไม่กีดขวางผู้โดยสารหรือการปฏิบัติงาน</p></div><span class="badge">อาจถูกตัดสิทธิ์</span></div>
+        <div class="privacy-grid">
+          <article class="privacy-card"><strong>ข้อมูลผู้สมัคร</strong><span>เก็บเท่าที่จำเป็น จำกัดสิทธิการเข้าถึง และไม่เปิดเผยโดยไม่จำเป็น</span></article>
+          <article class="privacy-card"><strong>ข้อมูลติดต่อ</strong><span>ใช้แจ้งสถานะ ผลการประกวด และรายละเอียดรางวัลตามวัตถุประสงค์</span></article>
+          <article class="privacy-card"><strong>ไฟล์และคำอธิบาย</strong><span>ตรวจสิทธิและกำหนดขอบเขตการนำไปประชาสัมพันธ์อย่างชัดเจน</span></article>
+          <article class="privacy-card"><strong>คะแนนกรรมการ</strong><span>จำกัดเฉพาะผู้เกี่ยวข้องและจัดเก็บตามระยะเวลาที่กำหนด</span></article>
+        </div>
+        <div class="info-grid" style="margin-top:18px">
+          <article class="info-card"><h3>ป้องกันการละเมิดสิทธิ</h3><p>ให้ผู้สมัครรับรองว่าเป็นเจ้าของผลงาน ตรวจกรณีมีข้อสงสัย และมีช่องทางแจ้งปัญหา</p></article>
+          <article class="info-card"><h3>ลดความลำเอียงในการตัดสิน</h3><p>ประกาศเกณฑ์ล่วงหน้า ใช้กรรมการหลายคน และบันทึกคะแนนแยกกันอย่างเป็นระบบ</p></article>
+          <article class="info-card"><h3>รองรับไฟล์จำนวนมาก</h3><p>กำหนดชนิดและขนาดไฟล์ ปรับขนาดภาพสำหรับแสดงผล และวางแผนพื้นที่จัดเก็บ</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section present-slide" id="management" data-title="ผู้พูด 5–6 · เกณฑ์และทรัพยากร">
       <div class="container">
         <div class="section-header"><div><div class="eyebrow">04 · กติกา การตัดสิน และทรัพยากร</div><h2>ตัดสินโปร่งใส ใช้งบประมาณอย่างมีแผน</h2><p class="section-note">ตัวเลขสำคัญจากรายงานถูกแปลงเป็นภาพเพื่อช่วยให้ผู้ฟังเข้าใจได้รวดเร็ว</p></div><span class="speaker-tag">ผู้พูดคนที่ 5–6</span></div>
         <div class="grid-2">
@@ -561,7 +657,7 @@
 
     <section class="section paper present-slide" id="prototype" data-title="สาธิตเว็บไซต์ต้นแบบ">
       <div class="container">
-        <div class="prototype-box"><div><div class="eyebrow" style="color:#ffd16b">ผลงานต้นแบบ</div><h2>เว็บไซต์ประกวดภาพถ่าย Thai Rail Shot</h2><p>เปิดเว็บไซต์ต้นแบบเพื่อสาธิตเส้นทางการใช้งาน ตั้งแต่ศึกษากิจกรรม สมัคร ส่งผลงาน ตรวจสอบสถานะ ให้คะแนน และประกาศผล</p><div class="prototype-flow"><span>หน้ากิจกรรม</span><span>สมัคร</span><span>ส่งผลงาน</span><span>แกลเลอรี</span><span>กรรมการ</span><span>ประกาศผล</span></div></div><a class="button gold" id="prototype-button" href="https://thairailshot.railway67.workers.dev/" target="_blank" rel="noopener">เปิดเว็บไซต์ต้นแบบ ↗</a></div>
+        <div class="prototype-box"><div><div class="eyebrow" style="color:#ffd16b">ผลงานที่ใช้งานได้จริง</div><h2>Thai Rail Shot — เว็บไซต์ประกวดและแกลเลอรีผลงาน</h2><p>ส่วนสำคัญของการนำเสนอคือการพาผู้ชมเข้าสู่เว็บไซต์จริง เพื่อชมผลงานที่ผู้ใช้งานส่งเข้ามาและเห็นกระบวนการของระบบ ตั้งแต่ศึกษากิจกรรม สมัคร ส่งผลงาน ตรวจสอบสถานะ ให้คะแนน จนถึงประกาศผล</p><div class="prototype-flow"><span>ข้อมูลกิจกรรม</span><span>สมัคร</span><span>ส่งผลงาน</span><span>ชมแกลเลอรี</span><span>กรรมการ</span><span>ประกาศผล</span></div></div><div><a class="button gold" id="prototype-button" href="https://thairailshot.railway67.workers.dev/" target="_blank" rel="noopener">เข้าชมผลงานบน Thai Rail Shot ↗</a></div></div>
       </div>
     </section>
 
@@ -587,14 +683,14 @@
           <article class="card team-card"><span class="avatar">ว</span><div><strong>นายวายุ รุ่งจันทร์</strong><span>เลขที่ 28</span></div></article>
           <article class="card team-card"><span class="avatar">แ</span><div><strong>นายแวมูฮำหมัดอาลี แวหะยี</strong><span>เลขที่ 30</span></div></article>
         </div>
-        <div class="sources"><strong>แหล่งภาพ:</strong> <a href="https://commons.wikimedia.org/wiki/File:Chiang_Mai_Thailand_Chiang-Mai-Railway-Station-01.jpg" target="_blank" rel="noopener">สถานีเชียงใหม่ — CEphoto, Uwe Aranas, CC BY-SA 4.0</a> · <a href="https://commons.wikimedia.org/wiki/File:Bangkok_Railway_Station,Thailand.jpg" target="_blank" rel="noopener">สถานีกรุงเทพ — Preecha.MJ, CC BY-SA 4.0</a> · <a href="https://commons.wikimedia.org/wiki/File:Kantang_train_station.jpg" target="_blank" rel="noopener">สถานีกันตัง — KOSIN SUKHUM, CC BY-SA 4.0</a> · <a href="https://commons.wikimedia.org/wiki/File:Sawankhalok_train_station_with_a_train_in_2009.jpg" target="_blank" rel="noopener">สถานีสวรรคโลก — พุทธพร ส่องศรี, CC BY-SA 3.0</a></div>
+        <div class="sources"><strong>แหล่งข้อมูลตามบรรณานุกรมในรายงาน:</strong> <a href="https://dticket.railway.co.th/DTicketPublicWeb/home/Home" target="_blank" rel="noopener">การรถไฟแห่งประเทศไทย</a> · <a href="https://datacatalog.tat.or.th/" target="_blank" rel="noopener">TAT Data Catalog</a> · <a href="https://gppc.pdpc.or.th/" target="_blank" rel="noopener">สำนักงานคณะกรรมการคุ้มครองข้อมูลส่วนบุคคล</a> · W3C: WCAG 2.2 · กรมทรัพย์สินทางปัญญา<br><strong>เครดิตภาพจาก Wikimedia Commons:</strong> <a href="https://commons.wikimedia.org/wiki/File:Chiang_Mai_Thailand_Chiang-Mai-Railway-Station-01.jpg" target="_blank" rel="noopener">สถานีเชียงใหม่ — CEphoto, Uwe Aranas</a> · <a href="https://commons.wikimedia.org/wiki/File:Bangkok_Railway_Station,Thailand.jpg" target="_blank" rel="noopener">สถานีกรุงเทพ — Preecha.MJ</a> · <a href="https://commons.wikimedia.org/wiki/File:Kantang_train_station.jpg" target="_blank" rel="noopener">สถานีกันตัง — KOSIN SUKHUM</a> · <a href="https://commons.wikimedia.org/wiki/File:Hua_Hin_Railway_Station_Thailand.JPG" target="_blank" rel="noopener">สถานีหัวหิน — Khaosaming</a> · <a href="https://commons.wikimedia.org/wiki/File:RiverKwaiBridge_Train.JPG" target="_blank" rel="noopener">สะพานข้ามแม่น้ำแคว — Jpatokal</a> · <a href="https://commons.wikimedia.org/wiki/File:Pasak_Jolasit_Dam_Excursion_Train_in_2019_-_%E0%B8%A3%E0%B8%96%E0%B9%84%E0%B8%9F%E0%B8%99%E0%B8%B3%E0%B9%80%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A7%E0%B9%80%E0%B8%82%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%99%E0%B8%9B%E0%B9%88%E0%B8%B2%E0%B8%AA%E0%B8%B1%E0%B8%81%E0%B8%AF.jpg" target="_blank" rel="noopener">รถไฟนำเที่ยวเขื่อนป่าสักฯ — Kor.Ranger</a> · <a href="https://commons.wikimedia.org/wiki/File:Maeklong_Railway_Market.jpg" target="_blank" rel="noopener">ตลาดรถไฟแม่กลอง — Ewong17</a> · <a href="https://commons.wikimedia.org/wiki/File:Sawankhalok_train_station_with_a_train_in_2009.jpg" target="_blank" rel="noopener">สถานีสวรรคโลก — พุทธพร ส่องศรี</a></div>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer"><div class="container footer-inner"><a class="brand" href="#top"><span class="brand-mark" aria-hidden="true">🚆</span><span>Railway Photo Project<small>ส่งเสริมการท่องเที่ยวทางรถไฟผ่านภาพถ่าย</small></span></a><p>เสนอ อาจารย์ศุภณัฐฎ์ ยงเขตกิจ · รายวิชาหลักการจัดการ · เวอร์ชัน 1.1.0</p></div></footer>
+  <footer class="site-footer"><div class="container footer-inner"><a class="brand" href="#top"><span class="brand-mark" aria-hidden="true">🚆</span><span>Railway Photo Project<small>ส่งเสริมการท่องเที่ยวทางรถไฟผ่านภาพถ่าย</small></span></a><p>เสนอ อาจารย์ศุภณัฐฎ์ ยงเขตกิจ · รายวิชาหลักการจัดการ · เวอร์ชัน 1.2.0</p></div></footer>
 
-  <div class="present-controls" id="present-controls" aria-label="ตัวควบคุมการนำเสนอ"><button type="button" id="prev-slide" aria-label="ส่วนก่อนหน้า">←</button><span id="slide-status">1 / 8</span><button type="button" id="next-slide" aria-label="ส่วนถัดไป">→</button><button type="button" id="exit-present" aria-label="ออกจากโหมดนำเสนอ">×</button></div>
+  <div class="present-controls" id="present-controls" aria-label="ตัวควบคุมการนำเสนอ"><button type="button" id="prev-slide" aria-label="ส่วนก่อนหน้า">←</button><span id="slide-status">1 / 11</span><button type="button" id="next-slide" aria-label="ส่วนถัดไป">→</button><button type="button" id="exit-present" aria-label="ออกจากโหมดนำเสนอ">×</button></div>
 
   <script>
     const body = document.body;
