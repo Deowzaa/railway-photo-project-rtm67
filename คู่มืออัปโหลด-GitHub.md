@@ -19,7 +19,7 @@
 4. เปิดโฟลเดอร์ที่แตกไฟล์แล้ว
 5. เลือกไฟล์ทั้งหมดภายในโฟลเดอร์ แล้วลากไปวางในหน้า GitHub
 6. ตรวจว่ามีไฟล์ `index.html`, `README.md`, `CHANGELOG.md`, `VERSION` และ `wrangler.jsonc`
-7. ช่อง Commit message ใส่ `Release v1.2.1 - Fix Cloudflare deployment`
+7. ช่อง Commit message ใส่ `Release v1.2.2 - Trigger Cloudflare deployment`
 8. กด **Commit changes**
 
 > ควรอัปโหลดไฟล์ที่อยู่ “ภายในโฟลเดอร์” ไม่ใช่อัปโหลดโฟลเดอร์ครอบอีกชั้น เพื่อให้ `index.html` อยู่หน้าแรกของ Repository
@@ -54,9 +54,9 @@
 2. เลือก **Releases**
 3. กด **Draft a new release**
 4. กด **Choose a tag**
-5. พิมพ์ `v1.2.1` แล้วเลือก **Create new tag**
-6. ช่อง Release title ใส่ `Railway Photo Project v1.2.1`
-7. คัดลอกรายละเอียดจากหัวข้อ 1.2.1 ในไฟล์ `CHANGELOG.md`
+5. พิมพ์ `v1.2.2` แล้วเลือก **Create new tag**
+6. ช่อง Release title ใส่ `Railway Photo Project v1.2.2`
+7. คัดลอกรายละเอียดจากหัวข้อ 1.2.2 ในไฟล์ `CHANGELOG.md`
 8. กด **Publish release**
 
 ## วิธีอัปเดตเวอร์ชันครั้งถัดไป
@@ -69,5 +69,5 @@
 
 1. แก้หมายเลขในไฟล์ `VERSION`
 2. เพิ่มรายการใหม่บนสุดของ `CHANGELOG.md`
-3. Commit ด้วยข้อความ เช่น `Release v1.2.1`
+3. Commit ด้วยข้อความ เช่น `Release v1.2.2`
 4. สร้าง Release และ Tag ให้ตรงกับเวอร์ชัน

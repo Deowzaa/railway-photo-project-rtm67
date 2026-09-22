@@ -22,9 +22,11 @@
 
 ## เวอร์ชันปัจจุบัน
 
-`v1.2.1`
+`v1.2.2`
 
-เวอร์ชันนี้เพิ่มไฟล์ `wrangler.jsonc` เพื่อให้ Cloudflare Workers ตรวจพบและเผยแพร่เว็บไซต์จาก GitHub ได้ถูกต้อง
+เวอร์ชันนี้สร้าง Commit ใหม่หลังเชื่อม GitHub กับ Cloudflare เพื่อเริ่มการ Build และเผยแพร่เว็บไซต์อัตโนมัติ
+
+<!-- Cloudflare deployment trigger v1.2.2 -->
 
 ดูรายละเอียดการเปลี่ยนแปลงในไฟล์ `CHANGELOG.md`
 
