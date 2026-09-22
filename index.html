@@ -381,6 +381,53 @@
     .showcase p { color: rgba(255,255,255,.74); }
     .showcase-preview { overflow: hidden; border: 6px solid rgba(255,255,255,.86); border-radius: 18px; box-shadow: 0 18px 40px rgba(0,0,0,.25); }
     .showcase-preview img { height: 225px; object-fit: cover; }
+    .guide-grid, .safety-code, .kpi-grid, .polc-grid { display: grid; gap: 14px; }
+    .guide-grid { grid-template-columns: repeat(4, 1fr); counter-reset: guide; }
+    .guide-card { position: relative; padding: 22px 20px 20px; border-radius: 18px; background: #fff; box-shadow: 0 9px 28px rgba(16,42,61,.07); }
+    .guide-card::before { counter-increment: guide; content: counter(guide, decimal-leading-zero); display: inline-grid; place-items: center; width: 38px; height: 38px; margin-bottom: 13px; border-radius: 12px; color: var(--navy); background: var(--gold); font-weight: 700; }
+    .guide-card strong, .guide-card span { display: block; }
+    .guide-card span { color: var(--muted); font-size: 14px; }
+    .checklist { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 22px; }
+    .check-item { position: relative; padding: 15px 16px 15px 46px; border-radius: 14px; background: var(--green-soft); }
+    .check-item::before { content: "✓"; position: absolute; left: 15px; top: 15px; width: 23px; height: 23px; display: grid; place-items: center; border-radius: 50%; color: #fff; background: #3f7b54; font-weight: 700; }
+    .safety-code { grid-template-columns: repeat(3, 1fr); margin-top: 22px; }
+    .safety-stage { overflow: hidden; border-radius: 20px; background: #fff; box-shadow: 0 10px 30px rgba(16,42,61,.07); }
+    .safety-stage h3 { padding: 16px 20px; color: #fff; background: var(--navy); }
+    .safety-stage ul { margin: 0; padding: 0 24px 22px 42px; color: var(--muted); }
+    .safety-stage li + li { margin-top: 7px; }
+    .incident-flow { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 22px; }
+    .incident-step { position: relative; padding: 20px; border: 1px solid #ecd4ca; border-radius: 17px; background: #fff8f5; }
+    .incident-step b { display: block; margin-bottom: 6px; color: #9a3e2a; }
+    .incident-step span { color: var(--muted); font-size: 14px; }
+    .framework-flow { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+    .framework-card { position: relative; min-height: 210px; padding: 22px; border-radius: 20px; color: #fff; background: var(--navy); }
+    .framework-card:nth-child(2) { background: #15577f; }
+    .framework-card:nth-child(3) { color: var(--ink); background: #f6ce70; }
+    .framework-card:nth-child(4) { background: #477d5a; }
+    .framework-card small { display: block; margin-bottom: 9px; opacity: .75; font-weight: 700; }
+    .framework-card ul { margin: 0; padding-left: 20px; font-size: 14px; }
+    .framework-card:not(:last-child)::after { content: "→"; position: absolute; z-index: 2; right: -20px; top: 50%; width: 28px; height: 28px; display: grid; place-items: center; border-radius: 50%; color: var(--navy); background: #fff; box-shadow: 0 4px 12px rgba(0,0,0,.14); transform: translateY(-50%); }
+    .polc-grid { grid-template-columns: repeat(4, 1fr); margin-top: 18px; }
+    .polc-card { padding: 20px; border-left: 5px solid var(--gold); border-radius: 16px; background: #fff; }
+    .polc-card strong, .polc-card span { display: block; }
+    .polc-card span { color: var(--muted); font-size: 13px; }
+    .risk-table { width: 100%; border-collapse: collapse; overflow: hidden; border-radius: 18px; background: #fff; box-shadow: 0 10px 30px rgba(16,42,61,.06); }
+    .risk-table th, .risk-table td { padding: 15px 16px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+    .risk-table th { color: #fff; background: var(--navy); }
+    .risk-table td { color: var(--muted); }
+    .risk-table td:first-child { color: var(--ink); font-weight: 600; }
+    .risk-level { display: inline-block; padding: 4px 9px; border-radius: 999px; font-size: 12px; font-weight: 700; }
+    .risk-level.high { color: #923a27; background: var(--red-soft); }
+    .risk-level.medium { color: #7e5b12; background: #fff0c8; }
+    .kpi-grid { grid-template-columns: repeat(4, 1fr); margin-top: 24px; }
+    .kpi-card { padding: 22px; border-radius: 18px; background: #fff; box-shadow: 0 9px 26px rgba(16,42,61,.06); }
+    .kpi-card b { display: block; margin-bottom: 8px; color: var(--gold-dark); font-size: 1.7rem; line-height: 1.1; }
+    .kpi-card span { color: var(--muted); font-size: 14px; }
+    .target-note { margin-top: 14px; padding: 14px 17px; border-left: 5px solid var(--gold); border-radius: 12px; background: #fff4d9; color: #6f541c; }
+    .future-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 24px; }
+    .future-card { padding: 19px; border-radius: 17px; color: #fff; background: linear-gradient(145deg, var(--navy), var(--navy-2)); }
+    .future-card strong, .future-card span { display: block; }
+    .future-card span { color: rgba(255,255,255,.72); font-size: 13px; }
     .site-footer { padding-block: 34px; color: rgba(255,255,255,.82); background: var(--navy); }
     .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
     .footer-inner p { margin: 0; font-size: 13px; }
@@ -416,6 +463,10 @@
       .chapter-nav { grid-template-columns: repeat(3, 1fr); }
       .travel-grid { grid-template-columns: repeat(2, 1fr); }
       .privacy-grid { grid-template-columns: repeat(2, 1fr); }
+      .guide-grid, .kpi-grid { grid-template-columns: repeat(2, 1fr); }
+      .framework-flow { grid-template-columns: repeat(2, 1fr); }
+      .framework-card::after { display: none !important; }
+      .polc-grid, .incident-flow { grid-template-columns: repeat(2, 1fr); }
     }
     @media (max-width: 760px) {
       .container { width: min(100% - 28px, 1180px); }
@@ -434,6 +485,8 @@
       .objective-grid, .info-grid { grid-template-columns: 1fr; }
       .showcase { grid-template-columns: 1fr; padding: 28px; }
       .footer-inner { align-items: flex-start; flex-direction: column; }
+      .safety-code, .future-grid { grid-template-columns: 1fr; }
+      .risk-table { display: block; overflow-x: auto; }
     }
     @media (max-width: 520px) {
       .brand > span:last-child { display: none; }
@@ -446,6 +499,7 @@
       .process-step::after { display: none !important; }
       .safety-banner { grid-template-columns: 1fr; }
       .chapter-nav, .travel-grid, .privacy-grid, .rule-list { grid-template-columns: 1fr; }
+      .guide-grid, .checklist, .framework-flow, .polc-grid, .incident-flow, .kpi-grid { grid-template-columns: 1fr; }
       .badge { justify-self: start; }
       .bar-row { grid-template-columns: 1fr 44px; }
       .bar-row .track { grid-column: 1 / -1; grid-row: 2; }
@@ -465,7 +519,7 @@
         <span>Railway Photo Project<small>โครงงานวิชาหลักการจัดการ</small></span>
       </a>
       <nav class="nav-links" id="site-nav" aria-label="เมนูหลัก">
-        <a href="#overview">ภาพรวม</a><a href="#tourism">การท่องเที่ยว</a><a href="#activities">กิจกรรม</a><a href="#system">ระบบ</a><a href="#safety-rights">สิทธิและความปลอดภัย</a><a href="#management">การจัดการ</a><a href="#evaluation">ประเมินผล</a>
+        <a href="#overview">ภาพรวม</a><a href="#activities">กิจกรรม</a><a href="#usage">วิธีใช้งาน</a><a href="#safety-rights">ความปลอดภัย</a><a href="#framework">กรอบโครงงาน</a><a href="#management">การจัดการ</a><a href="#evaluation">ประเมินผล</a>
       </nav>
       <div class="header-actions">
         <button class="button ghost" id="present-button" type="button">โหมดนำเสนอ</button>
@@ -595,10 +649,40 @@
       </div>
     </section>
 
+    <section class="section paper present-slide" id="usage" data-title="คู่มือเข้าใช้งาน">
+      <div class="container">
+        <div class="section-header"><div><div class="eyebrow">04 · คู่มือเข้าใช้งานเว็บไซต์</div><h2>เริ่มจากอ่านกติกา ไปจนถึงชมผลงานที่เผยแพร่</h2><p class="section-note">ออกแบบให้ผู้สนใจรู้ว่าต้องทำอะไรต่อในแต่ละขั้น และตรวจความพร้อมก่อนกดส่งผลงาน</p></div><span class="speaker-tag">ใช้งานได้ทั้งมือถือและคอมพิวเตอร์</span></div>
+        <div class="guide-grid" aria-label="ขั้นตอนการเข้าใช้งาน 8 ขั้นตอน">
+          <article class="guide-card"><strong>เปิดหน้าโครงการ</strong><span>อ่านภาพรวม วัตถุประสงค์ ประเภทกิจกรรม และกำหนดการ</span></article>
+          <article class="guide-card"><strong>อ่านกติกาให้ครบ</strong><span>ตรวจหัวข้อ คุณสมบัติ รูปแบบไฟล์ สิทธิ และข้อห้ามด้านความปลอดภัย</span></article>
+          <article class="guide-card"><strong>สมัครเข้าร่วม</strong><span>กรอกข้อมูลที่จำเป็นให้ถูกต้อง และตรวจข้อมูลติดต่อก่อนบันทึก</span></article>
+          <article class="guide-card"><strong>เตรียมผลงาน</strong><span>เลือกภาพของตนเอง เขียนชื่อ สถานที่ และแนวคิดที่สอดคล้องกับหัวข้อ</span></article>
+          <article class="guide-card"><strong>ตรวจความปลอดภัย</strong><span>ยืนยันว่าถ่ายจากพื้นที่สาธารณะหรือพื้นที่ที่ได้รับอนุญาตเท่านั้น</span></article>
+          <article class="guide-card"><strong>อัปโหลดและตรวจทาน</strong><span>เลือกไฟล์ตามชนิดและขนาดที่กำหนด ตรวจภาพและข้อความก่อนส่ง</span></article>
+          <article class="guide-card"><strong>ติดตามสถานะ</strong><span>ดูผลการตรวจเบื้องต้น การแก้ไขข้อมูล และประกาศผลจากช่องทางโครงการ</span></article>
+          <article class="guide-card"><strong>ชมผลงานผู้ใช้</strong><span>เข้าสู่ Thai Rail Shot เพื่อชมแกลเลอรีและผลงานที่ได้รับการคัดเลือก</span></article>
+        </div>
+        <div class="checklist" aria-label="รายการตรวจสอบก่อนส่งผลงาน">
+          <div class="check-item"><strong>ภาพเป็นผลงานของตนเอง</strong></div>
+          <div class="check-item"><strong>ตรงหัวข้อและข้อมูลสถานที่ถูกต้อง</strong></div>
+          <div class="check-item"><strong>ไม่มีข้อมูลส่วนตัวที่ไม่จำเป็นในคำอธิบาย</strong></div>
+          <div class="check-item"><strong>บุคคลที่เห็นชัดในภาพได้รับการยินยอมตามความเหมาะสม</strong></div>
+          <div class="check-item"><strong>ไม่ได้ถ่ายจากเขตทางหรือพื้นที่หวงห้าม</strong></div>
+          <div class="check-item"><strong>ตรวจไฟล์และข้อความก่อนกดส่งแล้ว</strong></div>
+        </div>
+        <div class="prototype-box" style="margin-top:24px"><div><h3>พร้อมใช้งานแล้วหรือยัง?</h3><p>เปิดเว็บไซต์กิจกรรมเพื่ออ่านประกาศล่าสุด สมัคร ส่งผลงาน และชมผลงานของผู้ใช้งานจริง</p></div><a class="button gold" href="https://thairailshot.railway67.workers.dev/" target="_blank" rel="noopener">ไปที่ Thai Rail Shot ↗</a></div>
+      </div>
+    </section>
+
     <section class="section paper present-slide" id="safety-rights" data-title="สิทธิและความปลอดภัย">
       <div class="container">
         <div class="section-header"><div><div class="eyebrow">05 · ความปลอดภัย ลิขสิทธิ์ และข้อมูลส่วนบุคคล</div><h2>เงื่อนไขที่ต้องมาก่อนภาพสวย</h2><p class="section-note">คุณภาพของผลงานไม่สามารถใช้เป็นเหตุผลในการเสี่ยงอันตรายหรือฝ่าฝืนกฎของสถานที่ได้</p></div><span class="speaker-tag">ความเสี่ยงระดับสูง</span></div>
         <div class="safety-banner"><span class="safety-icon" aria-hidden="true">!</span><div><strong>ห้ามยืน นั่ง เดิน หรือจัดท่าถ่ายภาพบนรางและเขตทาง</strong><p>ถ่ายภาพเฉพาะพื้นที่สาธารณะหรือพื้นที่ที่ได้รับอนุญาต ปฏิบัติตามป้ายเตือนและคำแนะนำของเจ้าหน้าที่ ไม่กีดขวางผู้โดยสารหรือการปฏิบัติงาน</p></div><span class="badge">อาจถูกตัดสิทธิ์</span></div>
+        <div class="safety-code">
+          <article class="safety-stage"><h3>ก่อนทำกิจกรรม</h3><ul><li>ตรวจเวลาเปิด–ปิด สภาพอากาศ และกฎของสถานที่จากแหล่งทางการ</li><li>วางแผนจุดถ่ายที่เป็นพื้นที่สาธารณะและปลอดภัย</li><li>ผู้เข้าร่วมที่เป็นเด็กหรือเยาวชนควรอยู่ในการดูแลที่เหมาะสม</li><li>เตรียมโทรศัพท์และแจ้งแผนการเดินทางแก่ผู้เกี่ยวข้อง</li></ul></article>
+          <article class="safety-stage"><h3>ระหว่างทำกิจกรรม</h3><ul><li>อยู่หลังเส้นหรือแนวกั้นเพื่อความปลอดภัยเสมอ</li><li>ทำตามป้ายประกาศและคำแนะนำของเจ้าหน้าที่</li><li>ไม่ปีนสิ่งกีดขวาง ไม่กีดขวางผู้โดยสาร และไม่รบกวนการปฏิบัติงาน</li><li>ไม่ใช้แฟลชหรืออุปกรณ์เสริมในจุดที่ห้ามใช้</li></ul></article>
+          <article class="safety-stage"><h3>ก่อนเผยแพร่ภาพ</h3><ul><li>ตรวจบุคคล ป้ายทะเบียน เอกสาร และข้อมูลที่อาจกระทบความเป็นส่วนตัว</li><li>ไม่ใส่เบอร์โทร ที่อยู่ หรือข้อมูลติดต่อในคำบรรยายสาธารณะ</li><li>ยืนยันความเป็นเจ้าของผลงานและขอบเขตการอนุญาตให้ใช้ภาพ</li><li>หากไม่แน่ใจ ให้หยุดเผยแพร่และสอบถามผู้จัดก่อน</li></ul></article>
+        </div>
         <div class="privacy-grid">
           <article class="privacy-card"><strong>ข้อมูลผู้สมัคร</strong><span>เก็บเท่าที่จำเป็น จำกัดสิทธิการเข้าถึง และไม่เปิดเผยโดยไม่จำเป็น</span></article>
           <article class="privacy-card"><strong>ข้อมูลติดต่อ</strong><span>ใช้แจ้งสถานะ ผลการประกวด และรายละเอียดรางวัลตามวัตถุประสงค์</span></article>
@@ -609,6 +693,36 @@
           <article class="info-card"><h3>ป้องกันการละเมิดสิทธิ</h3><p>ให้ผู้สมัครรับรองว่าเป็นเจ้าของผลงาน ตรวจกรณีมีข้อสงสัย และมีช่องทางแจ้งปัญหา</p></article>
           <article class="info-card"><h3>ลดความลำเอียงในการตัดสิน</h3><p>ประกาศเกณฑ์ล่วงหน้า ใช้กรรมการหลายคน และบันทึกคะแนนแยกกันอย่างเป็นระบบ</p></article>
           <article class="info-card"><h3>รองรับไฟล์จำนวนมาก</h3><p>กำหนดชนิดและขนาดไฟล์ ปรับขนาดภาพสำหรับแสดงผล และวางแผนพื้นที่จัดเก็บ</p></article>
+        </div>
+        <div class="section-header" style="margin-top:34px"><div><h2>เมื่อพบสถานการณ์ไม่ปลอดภัยหรือข้อร้องเรียน</h2><p class="section-note">ลำดับการตอบสนองแบบสั้น ชัด และไม่ขัดขวางการทำงานของเจ้าหน้าที่</p></div></div>
+        <div class="incident-flow">
+          <div class="incident-step"><b>1 · หยุดกิจกรรม</b><span>หยุดถ่ายภาพหรือหยุดเผยแพร่ผลงานที่มีข้อสงสัยทันที</span></div>
+          <div class="incident-step"><b>2 · ไปยังจุดปลอดภัย</b><span>ออกจากบริเวณเสี่ยงและไม่เข้าใกล้พื้นที่ปฏิบัติการ</span></div>
+          <div class="incident-step"><b>3 · แจ้งผู้รับผิดชอบ</b><span>แจ้งเจ้าหน้าที่สถานที่หรือผู้จัดกิจกรรมผ่านช่องทางที่ประกาศ</span></div>
+          <div class="incident-step"><b>4 · ตรวจสอบและดำเนินการ</b><span>บันทึกเฉพาะข้อมูลที่จำเป็น ระงับการแสดงผล และทำตามคำแนะนำทางการ</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section present-slide" id="framework" data-title="กรอบแนวคิดและการบริหาร">
+      <div class="container">
+        <div class="section-header"><div><div class="eyebrow">05 · กรอบแนวคิดจากรายงาน</div><h2>Input → Process → Output → Expected Outcome</h2><p class="section-note">แสดงความเชื่อมโยงจากทรัพยากรที่ใช้ ไปสู่กระบวนการ ผลผลิต และผลลัพธ์ที่โครงการคาดหวัง</p></div><span class="speaker-tag">กรอบแนวคิดโครงงาน</span></div>
+        <div class="framework-flow">
+          <article class="framework-card"><small>INPUT · ปัจจัยนำเข้า</small><h3>ข้อมูลและทรัพยากร</h3><ul><li>ข้อมูลโครงการและสถานที่</li><li>เว็บไซต์ บุคลากร งบประมาณ</li><li>กติกา ผู้สนับสนุน และพันธมิตร</li></ul></article>
+          <article class="framework-card"><small>PROCESS · กระบวนการ</small><h3>บริหารกิจกรรม</h3><ul><li>ประชาสัมพันธ์และรับสมัคร</li><li>ส่งผลงาน ตรวจสอบ ตัดสิน</li><li>ประกาศผลและประเมิน</li></ul></article>
+          <article class="framework-card"><small>OUTPUT · ผลผลิต</small><h3>สิ่งที่โครงการสร้าง</h3><ul><li>เว็บไซต์ต้นแบบและฐานข้อมูล</li><li>แกลเลอรีและเกณฑ์ตัดสิน</li><li>แผนดำเนินงานที่นำไปใช้ต่อได้</li></ul></article>
+          <article class="framework-card"><small>OUTCOME · ผลที่คาดหวัง</small><h3>คุณค่าที่เกิดขึ้น</h3><ul><li>สนใจท่องเที่ยวทางรถไฟมากขึ้น</li><li>เกิดพื้นที่การมีส่วนร่วม</li><li>สถานี ชุมชน และพื้นที่เป็นที่รู้จัก</li></ul></article>
+        </div>
+        <div class="polc-grid" aria-label="หลักการจัดการ POLC">
+          <article class="polc-card"><strong>Planning</strong><span>กำหนดเป้าหมาย กติกา งบประมาณ เวลา และแผนความเสี่ยง</span></article>
+          <article class="polc-card"><strong>Organizing</strong><span>แบ่งบทบาทผู้จัด ผู้ดูแล กรรมการ พันธมิตร และช่องทางประสานงาน</span></article>
+          <article class="polc-card"><strong>Leading</strong><span>สื่อสารให้เข้าใจ กระตุ้นการมีส่วนร่วม และย้ำมาตรฐานความปลอดภัย</span></article>
+          <article class="polc-card"><strong>Controlling</strong><span>ตรวจผลงาน บันทึกคะแนน ติดตามตัวชี้วัด และปรับปรุงจากข้อเสนอแนะ</span></article>
+        </div>
+        <div class="future-grid">
+          <article class="future-card"><strong>กลุ่มเป้าหมาย</strong><span>ประชาชน นักเรียน นักศึกษา นักท่องเที่ยว ช่างภาพสมัครเล่น และผู้สนใจรถไฟ</span></article>
+          <article class="future-card"><strong>คุณค่าที่นำเสนอ</strong><span>ข้อมูลกิจกรรมชัดเจน ส่งผลงานสะดวก ชมงานสร้างสรรค์ และค้นพบพื้นที่ตามแนวรถไฟ</span></article>
+          <article class="future-card"><strong>พันธมิตรสำคัญ</strong><span>หน่วยงานด้านรถไฟ การท่องเที่ยว ชุมชน สถานศึกษา และผู้สนับสนุนที่ไม่แทรกแซงการตัดสิน</span></article>
         </div>
       </div>
     </section>
@@ -631,6 +745,18 @@
             <div class="budget-item"><span>เงินสำรอง</span><strong>4,500 บาท</strong></div>
           </div></article>
         </div>
+        <div class="section-header" style="margin-top:36px"><div><h2>ทะเบียนความเสี่ยงและแนวทางควบคุม</h2><p class="section-note">นำประเด็นจากรายงานมาจัดลำดับ เพื่อให้ผู้จัดรู้ว่าควรป้องกันจุดใดก่อนเริ่มกิจกรรมจริง</p></div></div>
+        <table class="risk-table">
+          <thead><tr><th>ความเสี่ยง</th><th>ระดับ</th><th>แนวทางป้องกันและรับมือ</th></tr></thead>
+          <tbody>
+            <tr><td>ถ่ายภาพในพื้นที่อันตรายหรือหวงห้าม</td><td><span class="risk-level high">สูง</span></td><td>ประกาศข้อห้ามซ้ำในหน้ากติกาและก่อนส่งผลงาน ไม่รับผลงานจากพื้นที่เสี่ยง และยึดคำแนะนำเจ้าหน้าที่เป็นหลัก</td></tr>
+            <tr><td>ละเมิดลิขสิทธิ์หรือสิทธิส่วนบุคคล</td><td><span class="risk-level high">สูง</span></td><td>ให้ผู้ส่งรับรองความเป็นเจ้าของ มีช่องทางแจ้งปัญหา ตรวจสอบหลักฐาน และระงับการแสดงภาพระหว่างพิจารณา</td></tr>
+            <tr><td>ข้อมูลส่วนบุคคลรั่วไหล</td><td><span class="risk-level high">สูง</span></td><td>เก็บข้อมูลเท่าที่จำเป็น จำกัดสิทธิผู้ดูแล ไม่แสดงข้อมูลติดต่อสาธารณะ และกำหนดระยะเวลาจัดเก็บ</td></tr>
+            <tr><td>ไฟล์จำนวนมากหรือระบบรองรับไม่พอ</td><td><span class="risk-level high">สูง</span></td><td>กำหนดชนิดและขนาดไฟล์ ทำภาพสำหรับแสดงผล สำรองข้อมูล และติดตามพื้นที่จัดเก็บ</td></tr>
+            <tr><td>ข้อมูลสมัครไม่ครบหรือตัดสินไม่โปร่งใส</td><td><span class="risk-level medium">กลาง</span></td><td>ตรวจฟอร์มก่อนส่ง ประกาศเกณฑ์ล่วงหน้า ใช้กรรมการหลายคน และเก็บบันทึกคะแนน</td></tr>
+            <tr><td>งบประมาณไม่เพียงพอหรือข้อมูลท่องเที่ยวล้าสมัย</td><td><span class="risk-level medium">กลาง</span></td><td>กำหนดเพดานงบ หาเครือข่ายสนับสนุนที่ไม่กระทบความเป็นกลาง และทบทวนข้อมูลจากแหล่งทางการเป็นระยะ</td></tr>
+          </tbody>
+        </table>
       </div>
     </section>
 
@@ -651,6 +777,23 @@
           <article class="swot w"><strong>จุดอ่อน</strong><ul><li>ต้องใช้พื้นที่จัดเก็บภาพจำนวนมาก</li><li>ต้องมีผู้ดูแลตรวจสอบผลงานและข้อมูล</li></ul></article>
           <article class="swot o"><strong>โอกาส</strong><ul><li>ร่วมมือกับชุมชน สถานศึกษา และผู้สนับสนุน</li><li>ต่อยอดเป็นคลังภาพและเส้นทางท่องเที่ยว</li></ul></article>
           <article class="swot t"><strong>อุปสรรค</strong><ul><li>ข้อมูลท่องเที่ยวอาจล้าสมัย</li><li>ความเสี่ยงด้านสิทธิ ความปลอดภัย และงบประมาณ</li></ul></article>
+        </div>
+        <div class="section-header" style="margin-top:38px"><div><h2>ตัวชี้วัดและการประเมินผล</h2><p class="section-note">ประเมินด้วยระดับความคิดเห็น 5 ระดับ ครอบคลุมเนื้อหา การออกแบบ ความง่ายในการใช้งาน และประโยชน์ต่อการท่องเที่ยวทางรถไฟ</p></div></div>
+        <div class="kpi-grid">
+          <article class="kpi-card"><b>ครบถ้วน</b><strong>สาธิตฟังก์ชันหลัก</strong><span>ข้อมูลกิจกรรม สมัคร ส่งผลงาน ตรวจสอบ ตัดสิน ประกาศผล และแกลเลอรี</span></article>
+          <article class="kpi-card"><b>≥ 4.00/5</b><strong>ความง่ายในการใช้งาน</strong><span>ผู้ประเมินสามารถค้นหาข้อมูลและทำงานสำคัญได้โดยไม่สับสน</span></article>
+          <article class="kpi-card"><b>≥ 4.00/5</b><strong>ความชัดเจนของข้อมูล</strong><span>กติกา เงื่อนไข สิทธิ และคำเตือนอ่านเข้าใจได้</span></article>
+          <article class="kpi-card"><b>ส่วนใหญ่</b><strong>สนใจท่องเที่ยวเพิ่มขึ้น</strong><span>ผู้ประเมินรายงานว่าเนื้อหาช่วยเพิ่มความสนใจต่อการเดินทางทางรถไฟ</span></article>
+        </div>
+        <div class="target-note"><strong>หมายเหตุ:</strong> ตัวเลขข้างต้นเป็น “ค่าเป้าหมายที่เสนอในแผนประเมิน” ไม่ใช่ผลสำรวจจริง โครงการต้องเก็บข้อมูลจากการใช้งานจริงก่อนสรุปผลสัมฤทธิ์</div>
+        <div class="section-header" style="margin-top:34px"><div><h2>ข้อจำกัดและการต่อยอด</h2><p class="section-note">ต้นแบบแสดงแนวคิดและกระบวนการ แต่ยังไม่ควรอ้างผลด้านจำนวนผู้เข้าร่วม รายได้ชุมชน หรือพฤติกรรมการเดินทางจนกว่าจะทดลองใช้จริง</p></div></div>
+        <div class="future-grid">
+          <article class="future-card"><strong>แผนที่ผลงานตามสถานี</strong><span>ค้นหาภาพตามเส้นทาง จังหวัด สถานี หรือหัวข้อได้ง่ายขึ้น</span></article>
+          <article class="future-card"><strong>ข้อมูลเส้นทางจากแหล่งทางการ</strong><span>ทบทวนวันเวลาและเงื่อนไขก่อนเผยแพร่ทุกครั้ง</span></article>
+          <article class="future-card"><strong>ระบบแจ้งเตือนแบบยินยอม</strong><span>แจ้งสถานะผลงานและกำหนดการ โดยให้ผู้ใช้เลือกช่องทางได้</span></article>
+          <article class="future-card"><strong>หัวข้อตามฤดูกาล</strong><span>เชื่อมเทศกาล ชุมชน และการท่องเที่ยวที่เหมาะกับช่วงเวลา</span></article>
+          <article class="future-card"><strong>ความร่วมมือกับพื้นที่</strong><span>ทำงานร่วมกับชุมชน สถานศึกษา และผู้ดูแลสถานีอย่างเคารพบริบท</span></article>
+          <article class="future-card"><strong>การเข้าถึงสำหรับทุกคน</strong><span>ทดสอบคีย์บอร์ด สี ตัวอักษร ข้อความทดแทนภาพ และการใช้งานบนมือถือ</span></article>
         </div>
       </div>
     </section>
@@ -688,9 +831,9 @@
     </section>
   </main>
 
-  <footer class="site-footer"><div class="container footer-inner"><a class="brand" href="#top"><span class="brand-mark" aria-hidden="true">🚆</span><span>Railway Photo Project<small>ส่งเสริมการท่องเที่ยวทางรถไฟผ่านภาพถ่าย</small></span></a><p>เสนอ อาจารย์ศุภณัฐฎ์ ยงเขตกิจ · รายวิชาหลักการจัดการ · เวอร์ชัน 1.2.2</p></div></footer>
+  <footer class="site-footer"><div class="container footer-inner"><a class="brand" href="#top"><span class="brand-mark" aria-hidden="true">🚆</span><span>Railway Photo Project<small>ส่งเสริมการท่องเที่ยวทางรถไฟผ่านภาพถ่าย</small></span></a><p>เสนอ อาจารย์ศุภณัฐฎ์ ยงเขตกิจ · รายวิชาหลักการจัดการ · เวอร์ชัน 1.3.0</p></div></footer>
 
-  <div class="present-controls" id="present-controls" aria-label="ตัวควบคุมการนำเสนอ"><button type="button" id="prev-slide" aria-label="ส่วนก่อนหน้า">←</button><span id="slide-status">1 / 11</span><button type="button" id="next-slide" aria-label="ส่วนถัดไป">→</button><button type="button" id="exit-present" aria-label="ออกจากโหมดนำเสนอ">×</button></div>
+  <div class="present-controls" id="present-controls" aria-label="ตัวควบคุมการนำเสนอ"><button type="button" id="prev-slide" aria-label="ส่วนก่อนหน้า">←</button><span id="slide-status">1 / 14</span><button type="button" id="next-slide" aria-label="ส่วนถัดไป">→</button><button type="button" id="exit-present" aria-label="ออกจากโหมดนำเสนอ">×</button></div>
 
   <script>
     const body = document.body;
