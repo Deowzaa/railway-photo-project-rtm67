@@ -1,0 +1,4 @@
+Railway Photo Project RTM 67
+Cloudflare deployment trigger after GitHub repository access was granted.
+Version: 1.2.2
+Date: 2026-09-22
